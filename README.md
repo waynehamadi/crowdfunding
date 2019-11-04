@@ -13,13 +13,8 @@ This project is an onboarding training in Capsens
 ### Installing
 
 ```
-Give the example
+git clone git@github.com:MerwaneHAMADI/crowdfunding.git
+yarn install
+rails db:migrate
+rails s
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
