@@ -14,7 +14,10 @@ This project is an onboarding training in Capsens
 
 ```
 git clone git@github.com:MerwaneHAMADI/crowdfunding.git
+cd crowdfunding
 yarn install
 rails db:migrate
 rails s
 ```
+
+Go to http://localhost:3000/
