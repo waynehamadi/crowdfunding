@@ -1,24 +1,25 @@
-# README
+# Crowdfunding platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is an onboarding training in Capsens
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+### Prerequisites
 
-* System dependencies
+* **Ruby 2.6.3** (might work with other versions but not guaranteed)
+* **Rails 2.6.3**
 
-* Configuration
 
-* Database creation
+### Installing
 
-* Database initialization
+```
+Give the example
+```
 
-* How to run the test suite
+And repeat
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+until finished
+```
 
-* Deployment instructions
-
-* ...
+End with an example of getting some data out of the system or using it for a little demo
