@@ -8,6 +8,7 @@ This project is an onboarding training in Capsens
 
 * **Ruby 2.6.3** (might work with other versions but not guaranteed)
 * **Rails 2.6.3**
+* **local postgresql database**
 
 
 ### Installing
@@ -16,6 +17,7 @@ This project is an onboarding training in Capsens
 git clone git@github.com:MerwaneHAMADI/crowdfunding.git
 cd crowdfunding
 yarn install
+rails db:create
 rails db:migrate
 rails s
 ```
