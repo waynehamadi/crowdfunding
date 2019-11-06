@@ -1,13 +1,13 @@
 require "dry/transaction"
 class CreateUser
   include Dry::Transaction
-  step :validateUser
-  tee :createUser
+  step :validate
+  tee :create
   tee :sendWelcomeEmail
 
   private
 
-  def validateUser(input)
+  def validate(input)
     @user = input[:user]
     if @user.valid?
       Success(input)
@@ -16,7 +16,7 @@ class CreateUser
     end
   end
 
-  def createUser(input)
+  def create(input)
     @user.save
   end
   def sendWelcomeEmail(input)
