@@ -1,6 +1,5 @@
 require "dry/transaction"
-
-class Users::CreateTransaction
+class CreateUser
   include Dry::Transaction
   step :validateUser
   tee :createUser
@@ -8,18 +7,19 @@ class Users::CreateTransaction
 
   private
 
-  def validate(input)
+  def validateUser(input)
     @user = input[:user]
     if @user.valid?
       Success(input)
     else
-      raise
+      Failure(input.merge(error: @user.errors.full_messages.uniq.join('. ')))
     end
   end
+
   def createUser(input)
     @user.save
   end
-  def sendWelcomeEmail
+  def sendWelcomeEmail(input)
     @user = User.last
     mailer = UserMailer.with(user: @user).welcome_email.deliver_now
   end

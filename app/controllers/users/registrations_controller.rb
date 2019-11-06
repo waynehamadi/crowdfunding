@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_account_update_params, only: [:update]
-
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
-
-  # POST /resource
   def create
+    @user = User.new(user_params)
+    transaction = CreateUser.new.call(user: @user)
+    if transaction.success?
+      set_flash_message! :notice, :signed_up
+      sign_up(:user, @user)
+      redirect_to root_path
+    else
+      flash[:error] = transaction.failure[:error]
+      render :new
+    end
   end
-
-
   # GET /resource/edit
   # def edit
   #   super
@@ -58,10 +58,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-
   private
-
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :birthday)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :birth_date)
   end
 end
