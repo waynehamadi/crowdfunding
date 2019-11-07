@@ -16,6 +16,6 @@ if Rails.env.development?
     AdminUser.create!(email: 'admin3@capsens.eu', password: 'password3', password_confirmation: 'password3') if Rails.env.development?
   end
   unless User.find_by_email('user1@capsens.eu')
-    User.create!(first_name: "first_name1", last_name:"last_name2", birth_date:"12-01-1993", email: 'user1@capsens.eu', password: 'password1', password_confirmation: 'password1') if Rails.env.development?
+    User.create!(first_name: "first_name1", last_name:"last_name2", birth_date:"12-01-1993",email: 'user1@capsens.eu', password: 'password1', password_confirmation: 'password1') if Rails.env.development?
   end
 end
