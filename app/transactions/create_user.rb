@@ -20,7 +20,6 @@ class CreateUser
     @user.save
   end
   def send_welcome_email(input)
-    @user = User.last
     mailer = UserMailer.with(user: @user).welcome_email.deliver_now
   end
 end

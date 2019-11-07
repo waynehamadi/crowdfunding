@@ -20,7 +20,6 @@ ActiveAdmin.register User do
     column :last_sign_in_ip
     actions
   end
-
   filter :email
   filter :last_name
   filter :first_name
