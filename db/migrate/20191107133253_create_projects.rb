@@ -5,10 +5,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :long_description
       t.string :short_description
-      t.string :landscape_image
-      t.string :thumbnail_image
       t.integer :goal_amount
-
       t.timestamps
     end
   end
