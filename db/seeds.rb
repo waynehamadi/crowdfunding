@@ -1,6 +1,3 @@
-uploader = ImageUploader.new(:store)
-file = File.new(Rails.root.join('app/assets/images/seed/image.png'))
-uploaded_file = uploader.upload(file)
 if Rails.env.development?
   # Destroy All
   Project.destroy_all
@@ -36,6 +33,11 @@ if Rails.env.development?
 
   logement = Category.new(name: "logement")
   logement.save
+
+  # Project image
+  uploader = ImageUploader.new(:store)
+  file = File.new(Rails.root.join('app/assets/images/seed/image.jpeg'))
+  uploaded_file = uploader.upload(file)
 
   # Projects
 
