@@ -1,0 +1,2 @@
+class Counterpart < ApplicationRecord
+end
