@@ -26,6 +26,16 @@ ActiveAdmin.register Project do
     f.actions
   end
   show do
+    first = project.contributions.minimum(:amount_in_cents)
+    last = project.contributions.maximum(:amount_in_cents)
+    sum = project.contributions.sum(:amount_in_cents).fdiv(100).to_s
+    div do
+      h4 'Current contributions: ' + sum + '€'
+      h4 'Percent Done: ' + project.percent_done.round.to_s + '%'
+      h3 'Contributions:'
+      h4 'Lowest: ' + first.fdiv(100).to_s + '€' if first
+      h4 'Highest: ' + last.fdiv(100).to_s + '€' if last
+    end
     panel '' do
       attributes_table_for resource do
         row :name
@@ -41,7 +51,16 @@ ActiveAdmin.register Project do
         end
       end
     end
+    h1 'Contributions:'
+    table_for project.contributions do
+      column(:user)
+      column(:amount_in_cents)
+      column(:counterpart)
+      column :created_at
+    end
   end
 
 
 end
+
+
