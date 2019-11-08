@@ -57,12 +57,11 @@ ActiveRecord::Schema.define(version: 2019_11_07_164612) do
     t.string "name"
     t.text "long_description"
     t.string "short_description"
-    t.string "landscape_image"
-    t.string "thumbnail_image"
     t.integer "goal_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "image_data"
+    t.text "landscape_image_data"
+    t.text "thumbnail_image_data"
     t.index ["category_id"], name: "index_projects_on_category_id"
   end
 
