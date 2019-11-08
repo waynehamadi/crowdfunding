@@ -1,4 +1,4 @@
-class AddTrackableToDevise < ActiveRecord::Migration
+class AddTrackableToDevise < ActiveRecord::Migration[4.2]
   def up
     add_column :users, :sign_in_count, :integer, default: 0, null: false
     add_column :users, :current_sign_in_at, :datetime
