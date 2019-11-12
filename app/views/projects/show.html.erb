@@ -1,0 +1,19 @@
+<h1> <%= @project.name %></h1>
+<h4>Percent Done: <%= @project.percent_done.round %> % </h4>
+<h4>Goal Amount: <%= @project.goal_amount.fdiv(100) %> €</h4>
+<h4>Category: <%= @project.category.name %></h4>
+<h4>long_description: <%= @project.long_description %></h4>
+<h4>short_descrtion: <%= @project.short_description %></h4>
+<div>
+  <% unless @project.landscape_image.nil? %>
+            <%=  image_tag(@project.landscape_image.url)%>
+      <% end %>
+</div>
+<div>
+  <% unless @project.thumbnail_image.nil? %>
+            <%=  image_tag(@project.thumbnail_image.url)%>
+      <% end %>
+</div>
+<div >
+  <%= link_to 'Contribute'   %>
+</div>
