@@ -1,4 +1,3 @@
-require "dry/transaction"
 class CreateUser
   include Dry::Transaction
   step :validate

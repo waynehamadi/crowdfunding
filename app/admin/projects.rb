@@ -1,6 +1,33 @@
 ActiveAdmin.register Project do
-  permit_params :name, :goal_amount, :image, :landscape_image, :thumbnail_image
+  permit_params :name, :goal_amount, :image, :landscape_image, :thumbnail_image, :category_id
 
+  action_item :check_state, only: :show do
+    link_to 'update state', url_for(action: :check_state) if resource.aasm_state == 'draft' || resource.aasm_state == 'upcoming'
+  end
+  member_action :check_state do
+    transaction = CheckProject.new.call(project: resource)
+    redirect_to admin_project_path(resource)
+    if transaction.success?
+      flash[:success] = "The state successfully has changed to: #{resource.aasm_state}"
+    else
+      flash[:error] = "The state can't change. Current state:  #{resource.aasm_state}"
+    end
+  end
+  action_item :project_succeeded, only: :show do
+    link_to 'Evaluate the project', url_for(action: :project_succeeded) if resource.aasm_state == 'ongoing'
+  end
+  member_action :project_succeeded do
+    transaction = EvaluateProject.new.call(project: resource)
+    redirect_to admin_project_path(resource)
+    if transaction.success?
+      flash[:success] = "Your project is a: #{resource.aasm_state}"
+    else
+      flash[:error] = 'Failure'
+    end
+  end
+  action_item :new_counterpart, only: :show, if: proc { resource.aasm_state != 'ongoing' } do
+    link_to 'new counterpart', new_admin_counterpart_path(project: project.id)
+  end
   index do
     selectable_column
     id_column
@@ -12,6 +39,7 @@ ActiveAdmin.register Project do
   filter :name
   filter :goal_amount
   filter :created_at
+  filter :aasm_state, as: :select, collection: Project.state
 
   form do |f|
     f.inputs "Project" do
@@ -39,15 +67,20 @@ ActiveAdmin.register Project do
     panel '' do
       attributes_table_for resource do
         row :name
+        row :aasm_state
         row :goal_amount
         row :category
         row :long_description
         row :short_description
-        row :landscape_image do
-          image_tag(resource.landscape_image.url)
+        unless resource.landscape_image.nil?
+          row :landscape_image do
+            image_tag(resource.landscape_image.url)
+          end
         end
-        row :thumbnail_image do
-          image_tag(resource.thumbnail_image.url)
+        unless resource.landscape_image.nil?
+          row :thumbnail_image do
+            image_tag(resource.thumbnail_image.url)
+          end
         end
       end
     end
@@ -57,12 +90,13 @@ ActiveAdmin.register Project do
       column(:amount_in_cents)
       column(:counterpart)
       column :created_at
+      column :aasm_state
     end
     h1 'Counterparts:'
     table_for project.counterparts do
-      column(:name).pluck(:name)
-      column(:amount_in_cents).pluck(:amount_in_cents)
-      column(:stock).pluck(:stock)
+      column(:name)
+      column(:amount_in_cents)
+      column(:stock)
       column do |counterpart|
         link_to edit_admin_counterpart_path(counterpart.id, project: project) do
           'Edit'
