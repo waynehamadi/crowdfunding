@@ -26,15 +26,15 @@ ActiveAdmin.register Project do
     f.actions
   end
   show do
-    first = project.contributions.minimum(:amount_in_cents)
-    last = project.contributions.maximum(:amount_in_cents)
-    sum = project.contributions.sum(:amount_in_cents).fdiv(100).to_s
+    lowest_contribution = project.contributions.minimum(:amount_in_cents)
+    highest_contribution = project.contributions.maximum(:amount_in_cents)
+    total_contributed = project.contributions.sum(:amount_in_cents).fdiv(100).to_s
     div do
-      h4 'Current contributions: ' + sum + '€'
+      h4 'Total contributed: ' + total_contributed + '€'
       h4 'Percent Done: ' + project.percent_done.round.to_s + '%'
       h3 'Contributions:'
-      h4 'Lowest: ' + first.fdiv(100).to_s + '€' if first
-      h4 'Highest: ' + last.fdiv(100).to_s + '€' if last
+      h4 'Lowest: ' + lowest_contribution.fdiv(100).to_s + '€' if lowest_contribution
+      h4 'Highest: ' + highest_contribution.fdiv(100).to_s + '€' if highest_contribution
     end
     panel '' do
       attributes_table_for resource do
@@ -58,9 +58,21 @@ ActiveAdmin.register Project do
       column(:counterpart)
       column :created_at
     end
+    h1 'Counterparts:'
+    table_for project.counterparts do
+      column(:name).pluck(:name)
+      column(:amount_in_cents).pluck(:amount_in_cents)
+      column(:stock).pluck(:stock)
+      column do |counterpart|
+        link_to edit_admin_counterpart_path(counterpart.id, project: project) do
+          'Edit'
+        end
+      end
+      column do |counterpart|
+        link_to 'Delete', admin_counterpart_path(counterpart.id, project: project.id), method: :delete, data: { confirm: 'Are you sure?' }
+      end
+    end
   end
-
-
 end
 
 
