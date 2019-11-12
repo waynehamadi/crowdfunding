@@ -7,6 +7,9 @@ class Project < ApplicationRecord
   belongs_to :category
   validates :name, :goal_amount, presence: true
   validates :goal_amount, numericality: { greater_than: 0 }
+  scope :upcoming, -> { where aasm_state: :upcoming }
+  scope :ongoing, -> { where aasm_state: :ongoing }
+  scope :succeeded, -> { where aasm_state: :success }
   aasm do
     state :draft, initial: true
     state :upcoming
