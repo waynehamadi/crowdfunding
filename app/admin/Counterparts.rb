@@ -1,5 +1,5 @@
 ActiveAdmin.register Counterpart do
-  permit_params :name, :amount_in_cents
+  permit_params :name, :amount_in_cents, :stock, :state
 
   form do |f|
     f.inputs do

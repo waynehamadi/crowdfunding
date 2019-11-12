@@ -73,9 +73,6 @@ ActiveAdmin.register Project do
       end
     end
   end
-  # action_item :preview, only: :show do
-  #   link_to 'preview', project_path(resource)
-  # end
 end
 
 
