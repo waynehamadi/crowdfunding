@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Goal Amount</th>
+      <th scope="col">Percent Done</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+      <% @projects.each do |project| %>
+      <th><%= link_to(project.name , project_path(project))%></th>
+        <td><%= project.aasm_state %></td>
+        <td><%= project.percent_done.round %> %</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
