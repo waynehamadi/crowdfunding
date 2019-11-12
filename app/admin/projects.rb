@@ -58,14 +58,6 @@ ActiveAdmin.register Project do
       column(:counterpart)
       column :created_at
     end
-        h1 'Contributions:'
-    table_for project.contributions do
-      column(:user)
-      column(:amount_in_cents)
-      column(:counterpart)
-      column 'Created at', :created_at
-      column(:aasm_state)
-    end
     h1 'Counterparts:'
     table_for project.counterparts do
       column(:name).pluck(:name)
