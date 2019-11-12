@@ -4,6 +4,13 @@ class Project < ApplicationRecord
   has_many :counterparts, dependent: :destroy
   has_many :contributions, dependent: :destroy
   belongs_to :category
-  validates :name, presence: true
-  validates :goal_amount, presence: true
+  validates :name, :goal_amount, presence: true
+
+  def percent_done
+    amount_contributed.to_f * 100.00 / goal_amount.to_f
+  end
+
+  def amount_contributed
+    contributions.sum :amount_in_cents
+  end
 end
