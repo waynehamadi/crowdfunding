@@ -1,0 +1,29 @@
+<h1> <%= @project.name %></h1>
+<h4>Percent Done: <%= @project.percent_done.round %> % </h4>
+<h4>Goal Amount: <%= @project.goal_amount.fdiv(100) %> €</h4>
+<h4>Category: <%= @project.category.name %></h4>
+<h4>Description: <%= @project.long_description %></h4>
+<h4>Description courte: <%= @project.short_description %></h4>
+<div>
+  <% unless @project.landscape_image.nil? %>
+            <%=  image_tag(@project.landscape_image.url)%>
+      <% end %>
+</div>
+<div>
+  <% unless @project.thumbnail_image.nil? %>
+            <%=  image_tag(@project.thumbnail_image.url)%>
+      <% end %>
+</div>
+  <%= form_for [@project, @contribution] do |f| %>
+    <%= f.label 'Amount' %>
+    <%=  f.text_field :amount_in_cents, placeholder: '250'  %> €
+    <%= f.label 'Counterpart' %>
+    <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|counterpart| [counterpart.name, counterpart.id]})  %>
+    <%= f.submit 'Contribute'%>
+  <% end %>
+<% if flash[:error]  %>
+    <span><%= flash[:error] %></span>
+<% end %>
+<% if flash[:success]  %>
+    <span><%= flash[:success] %></span>
+<% end %>
