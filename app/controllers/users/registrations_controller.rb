@@ -2,15 +2,23 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   def create
-    @user = User.new(user_params)
-    transaction = CreateUser.new.call(user: @user)
+    build_resource(sign_up_params)
+    transaction = CreateUser.new.call(user: resource)
+    yield resource if block_given?
     if transaction.success?
-      set_flash_message! :notice, :signed_up
-      sign_up(:user, @user)
-      redirect_to root_path
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
     else
-      flash[:error] = transaction.failure[:error]
-      render :new
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
     end
   end
   # GET /resource/edit
