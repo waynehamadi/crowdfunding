@@ -4,6 +4,9 @@ ActiveAdmin.register Project do
   action_item :check_state, only: :show do
     link_to 'update state', url_for(action: :check_state) if resource.aasm_state == 'draft' || resource.aasm_state == 'upcoming'
   end
+  scope :upcoming
+  scope :ongoing
+  scope :succeeded
   member_action :check_state do
     transaction = CheckProject.new.call(project: resource)
     redirect_to admin_project_path(resource)
