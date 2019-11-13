@@ -18,16 +18,12 @@
     <%= f.label 'Amount' %>
     <%=  f.text_field :amount_in_cents, placeholder: '250'  %> €
     <%= f.label 'Counterpart' %>
-    <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|m| [m.name, m.id]})  %>
+    <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|counterpart| [counterpart.name, counterpart.id]})  %>
     <%= f.submit 'Contribute'%>
   <% end %>
 <% if flash[:error]  %>
-  <div class="flash">
     <span><%= flash[:error] %></span>
-  </div>
 <% end %>
 <% if flash[:success]  %>
-  <div class="flash">
     <span><%= flash[:success] %></span>
-  </div>
 <% end %>

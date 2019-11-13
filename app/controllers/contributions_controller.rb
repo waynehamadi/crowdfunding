@@ -9,7 +9,6 @@ class ContributionsController < ApplicationController
       else
        redirect_to project_path(@project), flash: {error: @contribution.errors.full_messages}
     end
-
   end
    def contribution_params
     params.require(:contribution).permit(:amount_in_cents, :counterpart_id)
