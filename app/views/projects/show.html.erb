@@ -5,14 +5,14 @@
 <h4>Description: <%= @project.long_description %></h4>
 <h4>Description courte: <%= @project.short_description %></h4>
 <div>
-  <% unless @project.landscape_image.nil? %>
-            <%=  image_tag(@project.landscape_image.url)%>
-      <% end %>
+  <% if @project.landscape_image.present? %>
+    <%=  image_tag(@project.landscape_image.url)%>
+  <% end %>
 </div>
 <div>
-  <% unless @project.thumbnail_image.nil? %>
-            <%=  image_tag(@project.thumbnail_image.url)%>
-      <% end %>
+  <% if @project.thumbnail_image.present? %>
+    <%=  image_tag(@project.thumbnail_image.url)%>
+  <% end %>
 </div>
   <%= form_for [@project, @contribution] do |f| %>
     <%= f.label 'Amount' %>
@@ -21,9 +21,3 @@
     <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|counterpart| [counterpart.name, counterpart.id]})  %>
     <%= f.submit 'Contribute'%>
   <% end %>
-<% if flash[:error]  %>
-    <span><%= flash[:error] %></span>
-<% end %>
-<% if flash[:success]  %>
-    <span><%= flash[:success] %></span>
-<% end %>

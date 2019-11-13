@@ -12,7 +12,7 @@ class CreateContribution
     @contribution = input[:contribution]
     @project = Project.find_by_id(input[:project_id])
     @contribution.project = @project
-    @user = input[:user]
+    @user = @contribution.user
     @contribution.user =@user
   end
 

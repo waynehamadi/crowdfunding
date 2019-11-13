@@ -1,6 +1,6 @@
 class ContributionsController < ApplicationController
   def create
-    @contribution = Contribution.new(contribution_params)
+    @contribution = current_user.contributions.new(contribution_params)
     transaction = CreateContribution.new.call(contribution: @contribution, project_id: params[:project_id], user: current_user)
 
     if transaction.success?
