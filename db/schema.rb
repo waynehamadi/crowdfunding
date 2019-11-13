@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_084048) do
+ActiveRecord::Schema.define(version: 2019_11_13_143846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_084048) do
     t.integer "amount_in_cents"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "aasm_state"
+    t.string "mango_pay_id"
     t.index ["counterpart_id"], name: "index_contributions_on_counterpart_id"
     t.index ["project_id"], name: "index_contributions_on_project_id"
     t.index ["user_id"], name: "index_contributions_on_user_id"
@@ -100,12 +102,16 @@ ActiveRecord::Schema.define(version: 2019_11_12_084048) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.date "birth_date"
+    t.datetime "birthday"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "nationality"
+    t.string "country_of_residence"
+    t.string "mango_pay_id"
+    t.string "wallet_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

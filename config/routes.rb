@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index show] do
     resources :contributions, only: %i[create]
   end
+  get 'payment', to: 'payments#payment'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
