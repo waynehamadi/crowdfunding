@@ -10,7 +10,7 @@ class Contribution < ApplicationRecord
     state :payment_pending
     state :paid
     state :canceled
-    event :initialize_payment do
+    event :new_payment do
       transitions from: :create, to: :payment_pending
     end
     event :pay do

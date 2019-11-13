@@ -4,10 +4,9 @@ class PaymentsController < ApplicationController
     transaction = VerifyPayment.new.call(contribution: @contribution)
     if transaction.failure
       flash[:error] = transaction.failure[:error]
-      redirect_to(contribution_path(@contribution))
     else
       flash[:success] = 'Payment succeeded'
-      redirect_to(project_path(@contribution.project))
     end
+    redirect_to(project_path(@contribution.project))
   end
 end

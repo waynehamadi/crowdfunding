@@ -1,11 +1,11 @@
 class VerifyPayment
   include Dry::Transaction
-  tee  :initialize_payment
+  tee  :new_payment
   step :validate_payment
 
   private
 
-  def initialize_payment(input)
+  def new_payment(input)
     @contribution = input[:contribution]
     @pay_in = MangoPay::PayIn.fetch(@contribution.mango_pay_id)
     @state = @pay_in['Status']
