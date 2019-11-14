@@ -4,4 +4,7 @@ if Rails.env.development?
   p 'Admins created (or already existing)'
   FactoryBot.create_list(:contribution, 20) unless Contribution.any?
   p 'Contributions created (or already existing)'
+  Project.all.each do |project|
+    CheckProject.new.call(project: project)
+  end
 end
