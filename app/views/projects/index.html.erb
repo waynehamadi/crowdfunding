@@ -5,7 +5,7 @@
       <div class="ctn-all-project">
         <a href=<%= "projects/" + project.id.to_s %>>
           <div class="container-img">
-            <img alt="" class="img-responsive thumbnail-project" src="https://fundimmo-production.s3.amazonaws.com/uploads/card_f215fe2f-a484-4717-95b1-ccfe9e7bb127.png">
+            <%= image_tag(project.landscape_image.url, class:"img-responsive thumbnail-project")  %>
             <div class="badge alert-danger" style=" position: absolute; top: 86%; right: 0px; font-size:14px; border-radius: 0px; padding:8px 15px"> <%= project.aasm_state.upcase() %>! </div>
           </div>
         </a>
