@@ -21,6 +21,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
+  def new
+    session[:user].present? ? build_resource(session[:user]) : build_resource
+    yield resource if block_given?
+    respond_with
+  end
   # GET /resource/edit
   # def edit
   #   super
