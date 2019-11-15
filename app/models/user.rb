@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
   validates :first_name, :last_name, :birthday, presence: true
-  has_many :contributions
+  has_many :contributions, dependent: :destroy
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -20,8 +20,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
-      DateTime date = DateTime.ParseExact(auth.extra.raw_info.birthday, "dd/MM/YYYY", null)
-      raise
+      user.birthday = Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')
     end
   end
 end
