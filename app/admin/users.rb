@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :birth_date, :first_name, :last_name, :password, :password_confirmation
+  permit_params :email, :birthday, :first_name, :last_name, :password, :password_confirmation
   member_action :impersonate do
     sign_in(:user, resource)
     redirect_to after_sign_in_path_for(resource)
@@ -33,7 +33,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       if f.object.new_record?
-        f.input :birth_date
+        f.input :birthday
         f.input :password
         f.input :password_confirmation
       end

@@ -6,7 +6,7 @@ ActiveAdmin.register Project do
   end
   scope :upcoming
   scope :ongoing
-  scope :succeeded
+  scope :success
   member_action :check_state do
     transaction = CheckProject.new.call(project: resource)
     redirect_to admin_project_path(resource)
