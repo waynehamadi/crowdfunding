@@ -2,7 +2,6 @@ ActiveAdmin.register Counterpart do
   permit_params :name, :amount_in_cents, :project_id
 
   form do |f|
-    Project.all.map { |project| ["#{project.name}, goal:#{project.goal_amount}€"] }
     if params[:project]
       h4 "Project: #{Project.find(params[:project]).name.capitalize}"
     end

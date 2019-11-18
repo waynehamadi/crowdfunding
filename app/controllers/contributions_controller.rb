@@ -1,7 +1,10 @@
 class ContributionsController < ApplicationController
   def create
     @contribution = current_user.contributions.new(contribution_params)
-    transaction = CreateContribution.new.call(contribution: @contribution, project_id: params[:project_id], user: current_user)
+    @project = Project.find_by_id(params[:project_id])
+    @contribution.project = @project
+    @contribution.user = current_user
+    transaction = CreateContribution.new.call(contribution: @contribution)
 
     if transaction.success?
       redirect_to transaction.success[:redirect]
