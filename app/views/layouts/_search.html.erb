@@ -1,9 +1,11 @@
 <div class="d-flex justify-content-between" style="margin-top:30px">
   <div>
-    <form class="project_search project-s" id="project_search project-s" action="/projects" accept-charset="UTF-8" method="get">
-      <input id="search-project" placeholder="Search a project" type="text" name="q[name_cont]" id="q_name_cont">
-    </form>
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :name_cont %>
+      <%= f.submit  %>
+    <% end %>
   </div>
+
   <div>
   <%= link_to 'Upcoming', projects_url(q: { aasm_state_eq: 'upcoming' }), class: "btn" %>
   <%= link_to 'Ongoing', projects_url(q: { aasm_state_eq: 'ongoing' }), class: "btn" %>

@@ -16,7 +16,7 @@ class CreateContribution
     if @contribution.valid?
       Success(input)
     else
-      Failure(input.merge(project: input[:project_id].to_i, error: @contribution.errors))
+      Failure(input.merge( error: @contribution.errors))
     end
   end
 
@@ -45,6 +45,6 @@ class CreateContribution
     @contribution.update(aasm_state: 'payment_pending', mango_pay_id: card_web['Id'])
     Success(input.merge(redirect: card_web['RedirectURL']))
   rescue MangoPay::ResponseError => e
-    Failure({ contribution: @contribution }.merge(error: 'mango_pay_error_card', project: @contribution.project_id))
+    Failure(input.merge(error: 'mango_pay_error_card'))
   end
 end
