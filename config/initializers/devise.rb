@@ -300,6 +300,6 @@ Devise.setup do |config|
   # Omni Auth Facebook
   # config.omniauth :facebook, "443571432967159", "6a839e62179c48a62786e26dd36e91f1", callback_url: "http://localhost:3000/users/auth/facebook/callback", scope: "email, public_profile, user_birthday, user_location", info_fields: 'id, name, first_name, middle_name, last_name, age_range, link, gender, locale, timezone, updated_time, verified, email, birthday, location'
 
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback", scope: "email, public_profile, user_birthday, user_location", info_fields: 'id, name, first_name, middle_name, last_name, age_range, link, gender, locale, timezone, updated_time, verified, email, birthday, location'
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback", scope: "email, user_birthday", info_fields: 'first_name, last_name, email, birthday'
 end
 

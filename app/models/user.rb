@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :contributions, dependent: :destroy
 
   def self.from_omniauth(auth)
-    User.create(
+    User.new(
       email: auth.info.email,
       first_name: auth.info.first_name,
       last_name: auth.info.last_name,
