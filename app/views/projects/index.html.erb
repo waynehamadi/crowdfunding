@@ -1,21 +1,29 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-
-      <th scope="col">Name</th>
-      <th scope="col">Goal Amount</th>
-      <th scope="col">Percent Done</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-active">
-      <% @projects.each do |project| %>
-      <th><%= link_to(project.name , project_path(project))%></th>
-        <td><%= project.aasm_state %></td>
-        <td><%= project.percent_done.round %> %</td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
+<%= render 'layouts/search' %>
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="ctn-all-project">
+        <a href=<%= "projects/" + project.id.to_s %>>
+          <div class="container-img">
+            <%= image_tag(project.landscape_image.url, class:"img-responsive thumbnail-project")  %>
+            <div class="badge alert-danger" style=" position: absolute; top: 86%; right: 0px; font-size:14px; border-radius: 0px; padding:8px 15px"> <%= project.aasm_state.upcase() %>! </div>
+          </div>
+        </a>
+        <div >
+          <p >
+            <%= link_to project.name, project_path(project), style:"text-decoration : none;"%>
+          </p>
+          <ul >
+            <li>
+              <p >Objectif : <%= project.goal_amount %> €</p>
+            </li>
+            <li>
+              <p >Percent Done : <%= project.percent_done.round %> %</p>
+            </li>
+          </ul>
+          <%= link_to "More info", project_path(project)%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
