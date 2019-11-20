@@ -297,7 +297,6 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  p "#{Rails.application.routes.default_url_options[:host]}/users/auth/facebook/callback"
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://#{Rails.application.routes.default_url_options[:host]}/users/auth/facebook/callback", scope: "email, user_birthday", info_fields: 'first_name, last_name, email, birthday'
 end
 
