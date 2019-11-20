@@ -2,14 +2,17 @@ require 'rails_helper'
 RSpec.describe CreateUser, type: :transactions do
   subject { CreateUser.new.call(user: user) }
   let(:user) { User.create!(first_name:"first_name", last_name:"last_name", birthday:"1999-03-04", email:"user_457@capsens.eu", password:"password", country_of_residence: "FR", nationality: "FR") }
+
   context 'Given the email is nil' do
     before do
       user.email = nil
     end
+
     it 'the transaction should fail' do
       expect(subject).to be_failure
     end
   end
+
   context 'when user is valid' do
 
     it 'calls MangoPay::NaturalUser' do

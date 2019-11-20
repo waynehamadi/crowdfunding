@@ -35,8 +35,6 @@ gem 'dry-transaction'
 gem 'activeadmin'
 gem 'faker'
 gem 'aasm'
-gem 'webmock'
-gem 'vcr'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "shrine", "~> 3.0"
