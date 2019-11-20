@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :birthday, presence: true
   has_many :contributions, dependent: :destroy
-
+  has_many :projects, -> { distinct }, through: :contributions
+  has_many :counterparts, -> { distinct }, through: :contributions
   def self.from_omniauth(auth)
     User.new(
       email: auth.info.email,
