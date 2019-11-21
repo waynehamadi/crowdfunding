@@ -1,9 +1,9 @@
-class GetContributorWorker
+class GetContributorsWorker
   include Sidekiq::Worker
   sidekiq_options retry: false
 
   def perform(project_id)
-    transaction = CsvExport.new.call(project_id: project_id)
+    transaction = GetContributors.new.call(project_id: project_id)
     if transaction.failure?
       flash[:error] = transaction.failure[:error]
       redirect_to admin_project_path(project)
