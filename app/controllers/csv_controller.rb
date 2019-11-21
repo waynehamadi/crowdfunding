@@ -1,5 +1,4 @@
 class CsvController < ApplicationController
-  before_action :fetch_project, only: :download
 
   def download
     filepath = GetContributorsWorker.new.perform(params[:project])
@@ -10,8 +9,5 @@ class CsvController < ApplicationController
 
   private
 
-  def fetch_project
-    @project_id = params[:project]
-  end
 end
 
