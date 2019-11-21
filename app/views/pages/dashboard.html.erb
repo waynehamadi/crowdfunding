@@ -16,3 +16,34 @@
   <% end %>
 </table>
 
+<p>My contributions :</p>
+
+<table >
+  <tr>
+    <th>Contribution amount</th>
+    <th>Project</th>
+  </tr>
+  <% current_user.contributions.each do |contribution| %>
+    <tr>
+      <td><%= contribution.amount_in_cents.fdiv(100).to_s%> €</td>
+      <td><%= contribution.project.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>My counterparts :</p>
+
+<table >
+  <tr>
+    <th>Counterpart name</th>
+    <th>Project name</th>
+    <th>Amount invested</th>
+  </tr>
+  <% current_user.counterparts.each do |counterpart| %>
+    <tr>
+      <td><%= counterpart.name%></td>
+      <td><%= counterpart.project.name %></td>
+      <td><%= counterpart.contributions.where(project_id: counterpart.project.id).sum(:amount_in_cents).fdiv(100).to_s%> €</td>
+    </tr>
+  <% end %>
+</table>
