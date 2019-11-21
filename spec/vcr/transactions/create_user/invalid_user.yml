@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer b2360b2b7f0d412a9f9826490927b54a
+      - bearer 1965c6a5b490447abdf10a4ed88b9c03
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -27,7 +27,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Thu, 21 Nov 2019 16:54:12 GMT
+      - Thu, 21 Nov 2019 17:12:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,8 +35,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dcbf706895b617fe29b4b63272de0a46c1574355252; expires=Sat, 21-Dec-19
-        16:54:12 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=dcb59dbd261554eba9edda04e37f20a531574356348; expires=Sat, 21-Dec-19
+        17:12:28 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -50,12 +50,12 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 53942f2749b9cd97-CDG
+      - 539449e9b83cee07-CDG
     body:
       encoding: UTF-8
       string: '{"Message":"One or several required parameters are missing or incorrect.
-        An incorrect resource ID also raises this kind of error.","Type":"param_error","Id":"8ba59e64-2087-429a-9726-60f6f8ee5978#1574355252","Date":1574355253.0,"errors":{"Nationality":"The
+        An incorrect resource ID also raises this kind of error.","Type":"param_error","Id":"9a4819ea-34ca-47e6-82de-8dec7d8ebe45#1574356348","Date":1574356349.0,"errors":{"Nationality":"The
         Nationality field is required."}}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:12 GMT
+  recorded_at: Thu, 21 Nov 2019 17:12:28 GMT
 recorded_with: VCR 5.0.0

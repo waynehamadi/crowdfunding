@@ -2,58 +2,6 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.sandbox.mangopay.com/v2.01/oauth/token
-    body:
-      encoding: UTF-8
-      string: grant_type=client_credentials
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Authorization:
-      - Basic bWVyd2FuZWhhbWFkaToxNGt3b0J2NlNxZFIzWVphZUg4a3JMQ0tmTzQ2Y0o5SmV5SHV6R1VqaGNYWHhldllrNw==
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 21 Nov 2019 16:54:11 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=dfe09a0635c197a92c273e1c28bf0ee711574355251; expires=Sat, 21-Dec-19
-        16:54:11 GMT; path=/; domain=.mangopay.com; HttpOnly
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      Cf-Cache-Status:
-      - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 53942f21a8d9ee71-CDG
-    body:
-      encoding: ASCII-8BIT
-      string: '{"access_token":"b2360b2b7f0d412a9f9826490927b54a","token_type":"bearer","expires_in":1199}'
-    http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:11 GMT
-- request:
-    method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/users/natural
     body:
       encoding: UTF-8
@@ -79,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 16:54:11 GMT
+      - Thu, 21 Nov 2019 16:54:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -87,8 +35,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d5b93391d4e593db7b54d9116425b64581574355251; expires=Sat, 21-Dec-19
-        16:54:11 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d34fbf8692d593e4027ee11a5c089a86a1574355252; expires=Sat, 21-Dec-19
+        16:54:12 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -96,15 +44,15 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '3'
-      - '3'
-      - '580'
-      - '7'
+      - '5'
+      - '5'
+      - '582'
+      - '9'
       X-Ratelimit-Remaining:
-      - '105020'
-      - '2297'
-      - '4497'
-      - '8793'
+      - '105018'
+      - '2295'
+      - '4495'
+      - '8791'
       X-Ratelimit-Reset:
       - '1574356140'
       - '1574357040'
@@ -117,18 +65,18 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 53942f22cd0768fa-CDG
+      - 53942f255b20cd77-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"first_name","LastName":"last_name","Birthday":920505600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_457@capsens.eu","KYCLevel":"LIGHT","Id":"71651890","Tag":null,"CreationDate":1574355251}'
+      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"first_name","LastName":"last_name","Birthday":920505600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_457@capsens.eu","KYCLevel":"LIGHT","Id":"71651894","Tag":null,"CreationDate":1574355252}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:11 GMT
+  recorded_at: Thu, 21 Nov 2019 16:54:12 GMT
 - request:
     method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/wallets
     body:
       encoding: UTF-8
-      string: '{"Owners":["71651890"],"Description":"Wallet de: user_457@capsens.eu","Currency":"EUR"}'
+      string: '{"Owners":["71651894"],"Description":"Wallet de: user_457@capsens.eu","Currency":"EUR"}'
     headers:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
@@ -150,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 16:54:11 GMT
+      - Thu, 21 Nov 2019 16:54:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -158,8 +106,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d803f713f1ddff749230935e4b2038c6d1574355251; expires=Sat, 21-Dec-19
-        16:54:11 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d5f59b974d9b48c81f360d3efda234d601574355252; expires=Sat, 21-Dec-19
+        16:54:12 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -167,15 +115,15 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '4'
-      - '4'
-      - '581'
-      - '8'
+      - '10'
+      - '583'
+      - '6'
+      - '6'
       X-Ratelimit-Remaining:
-      - '105019'
-      - '2296'
-      - '4496'
-      - '8792'
+      - '105017'
+      - '2294'
+      - '4494'
+      - '8790'
       X-Ratelimit-Reset:
       - '1574356140'
       - '1574357040'
@@ -188,10 +136,10 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 53942f23cac3ee60-CDG
+      - 53942f263df3ee33-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Description":"Wallet de: user_457@capsens.eu","Owners":["71651890"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71651891","Tag":null,"CreationDate":1574355251}'
+      string: '{"Description":"Wallet de: user_457@capsens.eu","Owners":["71651894"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71651895","Tag":null,"CreationDate":1574355252}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:11 GMT
+  recorded_at: Thu, 21 Nov 2019 16:54:12 GMT
 recorded_with: VCR 5.0.0
