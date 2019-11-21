@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'pages#home'
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: { registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks' }
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'dashboard', to: 'pages#dashboard'
   resources :projects, only: %i[index show] do
