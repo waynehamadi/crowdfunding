@@ -21,6 +21,8 @@ gem 'mangopay'
 gem 'ransack'
 gem 'omniauth-facebook'
 gem 'sidekiq'
+gem 'vcr'
+gem 'webmock'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

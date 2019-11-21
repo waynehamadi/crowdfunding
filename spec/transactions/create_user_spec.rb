@@ -1,4 +1,12 @@
 require 'rails_helper'
+require "vcr"
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/vcr"
+  c.hook_into :webmock
+  c.allow_http_connections_when_no_cassette = true
+end
+
+
 RSpec.describe CreateUser, type: :transactions do
   subject { CreateUser.new.call(user: user) }
   let(:user) { User.create!(first_name:"first_name", last_name:"last_name", birthday:"1999-03-04", email:"user_457@capsens.eu", password:"password", country_of_residence: "FR", nationality: "FR") }
@@ -13,7 +21,7 @@ RSpec.describe CreateUser, type: :transactions do
     end
   end
 
-  context 'when user is valid' do
+  context 'when user is valid', cassette: 'project_not_collecting' do
 
     it 'calls MangoPay::NaturalUser' do
       expect(MangoPay::NaturalUser).to receive(:create).and_call_original
