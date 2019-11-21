@@ -4,6 +4,9 @@ ActiveAdmin.register Project do
   action_item :check_state, only: :show do
     link_to 'update state', url_for(action: :check_state) if resource.aasm_state == 'draft' || resource.aasm_state == 'upcoming'
   end
+  action_item :csv, only: :show do
+    link_to 'Download contributors', csv_download_url(project: resource, format: :csv)
+  end
   scope :upcoming
   scope :ongoing
   scope :success
@@ -30,6 +33,14 @@ ActiveAdmin.register Project do
   end
   action_item :new_counterpart, only: :show, if: proc { resource.aasm_state != 'ongoing' } do
     link_to 'new counterpart', new_admin_counterpart_path(project: project.id)
+  end
+  csv do |format|
+    @projects = Project.custom_query # or scope
+
+    format.html
+    format.csv   { export_csv @products }
+    format.json  { render json: @products }
+    format.xml   { render xml: @products }
   end
   index do
     selectable_column
@@ -110,6 +121,7 @@ ActiveAdmin.register Project do
       end
     end
   end
+
 end
 
 
