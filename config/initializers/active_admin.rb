@@ -325,36 +325,4 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
-  class ActiveAdmin::ResourceController
-    module Streaming
-      class DummyController
-        def initialize(collection:)
-          @collection = collection
-        end
-        attr_reader :collection
-
-        def find_collection(*)
-          collection
-        end
-
-        def apply_decorator(resource)
-          resource
-        end
-
-        def view_context
-          @view_context ||= ViewContext.new
-        end
-
-        class ViewContext
-          include MethodOrProcHelper
-        end
-      end
-
-      def export_csv(collection)
-        controller = DummyController.new(collection: collection)
-        headers['Content-Disposition'] = %{attachment; filename="#{csv_filename}"}
-        stream_resource &active_admin_config.csv_builder.method(:build).to_proc.curry[controller]
-      end
-    end
-  end
 end

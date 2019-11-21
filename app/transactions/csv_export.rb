@@ -8,10 +8,10 @@ class CsvExport
   private
 
   def validate(input)
-    @project = Project.find(input[:pro].to_i)
-    @hash = @project.contributors
-    if @hash.empty?
-      Failure(input.merge(error: 'This project has no contributors'))
+    @project = Project.find(input[:project_id].to_i)
+    @contributors = @project.contributors
+    if @contributors.empty?
+      Failure(input.merge(error: 'This project has no contributor'))
     else
       Success(input)
     end
@@ -23,7 +23,7 @@ class CsvExport
     filepath    = @file.path
     CSV.open(@file, 'wb', csv_options) do |csv|
       csv << %w[Firstname Lastname Created_at Email Birthday CountryOfResidence Nationality]
-      @hash.each do |user|
+      @contributors.each do |user|
         csv << [user.first_name, user.last_name, user.created_at, user.email, user.birthday, user.country_of_residence, user.nationality]
       end
     end

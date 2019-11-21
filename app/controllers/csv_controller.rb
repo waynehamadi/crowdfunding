@@ -2,7 +2,7 @@ class CsvController < ApplicationController
   before_action :fetch_project, only: :download
 
   def download
-    filepath = GetContributorWorker.new.perform(@project_id, current_admin_user.email)
+    filepath = GetContributorWorker.new.perform(params[:project])
       respond_to do |format|
         format.csv { send_data File.read(filepath) }
       end

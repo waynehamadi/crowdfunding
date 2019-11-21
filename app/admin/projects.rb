@@ -34,14 +34,6 @@ ActiveAdmin.register Project do
   action_item :new_counterpart, only: :show, if: proc { resource.aasm_state != 'ongoing' } do
     link_to 'new counterpart', new_admin_counterpart_path(project: project.id)
   end
-  csv do |format|
-    @projects = Project.custom_query # or scope
-
-    format.html
-    format.csv   { export_csv @products }
-    format.json  { render json: @products }
-    format.xml   { render xml: @products }
-  end
   index do
     selectable_column
     id_column
