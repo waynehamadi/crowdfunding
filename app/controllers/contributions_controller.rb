@@ -2,14 +2,8 @@ class ContributionsController < ApplicationController
 
   def show
     @contribution = Contribution.find(params[:id])
-    @project = @contribution.project
-    @counterpart = @contribution.counterpart
-    @user = current_user
     respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: 'contribution'
-      end
+      format.pdf { render pdf:  "contribution#{@contribution.id}" }
     end
   end
   def create
@@ -27,7 +21,7 @@ class ContributionsController < ApplicationController
   end
 
   def contribution_params
-    params.require(:contribution).permit(:amount_in_cents, :counterpart_id, :contribution_id)
+    params.require(:contribution).permit(:amount_in_cents, :counterpart)
   end
 end
 #

@@ -28,7 +28,7 @@
     <tr>
       <td><%= contribution.amount_in_cents.fdiv(100)%> €</td>
       <td><%= contribution.project.name %></td>
-      <td><%= link_to 'Download contributors', contribution_path(contribution, format: :pdf) %></td>
+      <td><%= link_to 'Download contribution details', contribution_path(contribution, format: :pdf) %></td>
     </tr>
   <% end %>
 </table>
