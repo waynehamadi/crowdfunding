@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe GetContributors, type: :transactions do
   subject { GetContributors.new.call(project_id: project.id) }
-  let(:project) { FactoryBot.create(:project)  }
+  let(:project) { create(:project)  }
 
   context 'When the project has no contributor' do
 
@@ -19,11 +19,11 @@ RSpec.describe GetContributors, type: :transactions do
     end
 
     it 'a csv file is created' do
-       expect(File.exist?(subject.success[:filepath])).to be true
+       expect(File.exist?(subject.success[:file_path])).to be true
     end
 
     it 'the csv file has 4 lines ' do
-      expect(File.readlines(subject.success[:filepath]).size).to be 4
+      expect(File.readlines(subject.success[:file_path]).size).to be 4
     end
   end
 end

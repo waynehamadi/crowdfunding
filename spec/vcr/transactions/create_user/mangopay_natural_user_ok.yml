@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer b2360b2b7f0d412a9f9826490927b54a
+      - bearer 3f74f26a6fd345b0821a294511e64088
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -27,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 16:54:12 GMT
+      - Fri, 22 Nov 2019 10:40:13 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -35,8 +35,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d34fbf8692d593e4027ee11a5c089a86a1574355252; expires=Sat, 21-Dec-19
-        16:54:12 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d83aa8c42a8f8396fdfaf915a1c272d481574419213; expires=Sun, 22-Dec-19
+        10:40:13 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -44,20 +44,20 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '5'
-      - '5'
-      - '582'
-      - '9'
+      - '59'
+      - '59'
+      - '647'
+      - '87'
       X-Ratelimit-Remaining:
-      - '105018'
-      - '2295'
-      - '4495'
-      - '8791'
+      - '104953'
+      - '2241'
+      - '4441'
+      - '8713'
       X-Ratelimit-Reset:
-      - '1574356140'
-      - '1574357040'
-      - '1574358840'
-      - '1574441580'
+      - '1574420100'
+      - '1574421000'
+      - '1574422800'
+      - '1574505540'
       Cf-Cache-Status:
       - DYNAMIC
       Expect-Ct:
@@ -65,23 +65,23 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 53942f255b20cd77-CDG
+      - 539a48b5982eee44-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"first_name","LastName":"last_name","Birthday":920505600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_457@capsens.eu","KYCLevel":"LIGHT","Id":"71651894","Tag":null,"CreationDate":1574355252}'
+      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"first_name","LastName":"last_name","Birthday":920505600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_457@capsens.eu","KYCLevel":"LIGHT","Id":"71670476","Tag":null,"CreationDate":1574419213}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:12 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:13 GMT
 - request:
     method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/wallets
     body:
       encoding: UTF-8
-      string: '{"Owners":["71651894"],"Description":"Wallet de: user_457@capsens.eu","Currency":"EUR"}'
+      string: '{"Owners":["71670476"],"Description":"Wallet de: user_457@capsens.eu","Currency":"EUR"}'
     headers:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer b2360b2b7f0d412a9f9826490927b54a
+      - bearer 3f74f26a6fd345b0821a294511e64088
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -98,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 16:54:12 GMT
+      - Fri, 22 Nov 2019 10:40:13 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -106,8 +106,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d5f59b974d9b48c81f360d3efda234d601574355252; expires=Sat, 21-Dec-19
-        16:54:12 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d347585d05be6d00f57ede0fe082cfab11574419213; expires=Sun, 22-Dec-19
+        10:40:13 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -115,20 +115,20 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '10'
-      - '583'
-      - '6'
-      - '6'
+      - '60'
+      - '60'
+      - '648'
+      - '88'
       X-Ratelimit-Remaining:
-      - '105017'
-      - '2294'
-      - '4494'
-      - '8790'
+      - '104952'
+      - '2240'
+      - '4440'
+      - '8712'
       X-Ratelimit-Reset:
-      - '1574356140'
-      - '1574357040'
-      - '1574358840'
-      - '1574441580'
+      - '1574420100'
+      - '1574421000'
+      - '1574422800'
+      - '1574505540'
       Cf-Cache-Status:
       - DYNAMIC
       Expect-Ct:
@@ -136,10 +136,10 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 53942f263df3ee33-CDG
+      - 539a48b63ab5edbf-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Description":"Wallet de: user_457@capsens.eu","Owners":["71651894"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71651895","Tag":null,"CreationDate":1574355252}'
+      string: '{"Description":"Wallet de: user_457@capsens.eu","Owners":["71670476"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71670477","Tag":null,"CreationDate":1574419213}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 16:54:12 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:13 GMT
 recorded_with: VCR 5.0.0

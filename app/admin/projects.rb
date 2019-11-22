@@ -5,7 +5,7 @@ ActiveAdmin.register Project do
     link_to 'update state', url_for(action: :check_state) if resource.aasm_state == 'draft' || resource.aasm_state == 'upcoming'
   end
   action_item :csv, only: :show do
-    link_to 'Download contributors', csv_download_url(project: resource, format: :csv)
+    link_to 'Download contributors', csv_download_url(project_id: resource, format: :csv)
   end
   scope :upcoming
   scope :ongoing

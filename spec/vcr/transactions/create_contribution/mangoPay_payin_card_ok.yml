@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 17:21:31 GMT
+      - Fri, 22 Nov 2019 10:40:12 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d42b18a00500c0192518e8dd8298d25951574356891; expires=Sat, 21-Dec-19
-        17:21:31 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d6e464acb20f59d9da829fb95ed19c9251574419211; expires=Sun, 22-Dec-19
+        10:40:11 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -46,23 +46,23 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 5394572c2bd6cdb3-CDG
+      - 539a48aa7ca03c4b-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"access_token":"06d09e4f4b0c460189daa14e71bc37a9","token_type":"bearer","expires_in":1199}'
+      string: '{"access_token":"3f74f26a6fd345b0821a294511e64088","token_type":"bearer","expires_in":1199}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:31 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:12 GMT
 - request:
     method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/users/natural
     body:
       encoding: UTF-8
-      string: '{"FirstName":"Keith","LastName":"Oberbrunner","Birthday":900201600,"Nationality":"FR","CountryOfResidence":"FR","Email":"user_c965ba317862aa0b0913@capsens.eu"}'
+      string: '{"FirstName":"Maggie","LastName":"Gaylord","Birthday":900201600,"Nationality":"FR","CountryOfResidence":"FR","Email":"user_8b0da4734781cbaa3a53@capsens.eu"}'
     headers:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer 06d09e4f4b0c460189daa14e71bc37a9
+      - bearer 3f74f26a6fd345b0821a294511e64088
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -79,7 +79,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 17:21:31 GMT
+      - Fri, 22 Nov 2019 10:40:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -87,8 +87,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d0386a90e3b2d87f66c63bdbacf6600fa1574356891; expires=Sat, 21-Dec-19
-        17:21:31 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=de35e1544052729cc501bde30bc3bec991574419212; expires=Sun, 22-Dec-19
+        10:40:12 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -96,20 +96,20 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '3'
-      - '586'
-      - '9'
-      - '9'
+      - '53'
+      - '53'
+      - '641'
+      - '81'
       X-Ratelimit-Remaining:
-      - '105014'
-      - '2297'
-      - '4491'
-      - '8791'
+      - '104959'
+      - '2247'
+      - '4447'
+      - '8719'
       X-Ratelimit-Reset:
-      - '1574357760'
-      - '1574358660'
-      - '1574360460'
-      - '1574443200'
+      - '1574420100'
+      - '1574421000'
+      - '1574422800'
+      - '1574505540'
       Cf-Cache-Status:
       - DYNAMIC
       Expect-Ct:
@@ -117,23 +117,23 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 5394572dca4bee2f-CDG
+      - 539a48abbcdbedb7-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"Keith","LastName":"Oberbrunner","Birthday":900201600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_c965ba317862aa0b0913@capsens.eu","KYCLevel":"LIGHT","Id":"71652869","Tag":null,"CreationDate":1574356891}'
+      string: '{"Address":{"AddressLine1":null,"AddressLine2":null,"City":null,"Region":null,"PostalCode":null,"Country":null},"FirstName":"Maggie","LastName":"Gaylord","Birthday":900201600,"Nationality":"FR","CountryOfResidence":"FR","Occupation":null,"IncomeRange":null,"ProofOfIdentity":null,"ProofOfAddress":null,"Capacity":"NORMAL","PersonType":"NATURAL","Email":"user_8b0da4734781cbaa3a53@capsens.eu","KYCLevel":"LIGHT","Id":"71670470","Tag":null,"CreationDate":1574419212}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:31 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:12 GMT
 - request:
     method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/wallets
     body:
       encoding: UTF-8
-      string: '{"Owners":["71652869"],"Description":"Wallet de: user_c965ba317862aa0b0913@capsens.eu","Currency":"EUR"}'
+      string: '{"Owners":["71670470"],"Description":"Wallet de: user_8b0da4734781cbaa3a53@capsens.eu","Currency":"EUR"}'
     headers:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer 06d09e4f4b0c460189daa14e71bc37a9
+      - bearer 3f74f26a6fd345b0821a294511e64088
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -150,7 +150,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 17:21:32 GMT
+      - Fri, 22 Nov 2019 10:40:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -158,8 +158,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d493ba5ca6640b0b59abe062254d94d201574356891; expires=Sat, 21-Dec-19
-        17:21:31 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=da8f574b22db972c00af510a720f07a5c1574419212; expires=Sun, 22-Dec-19
+        10:40:12 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -167,20 +167,20 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '10'
-      - '10'
-      - '4'
-      - '587'
+      - '54'
+      - '54'
+      - '642'
+      - '82'
       X-Ratelimit-Remaining:
-      - '105013'
-      - '2296'
-      - '4490'
-      - '8790'
+      - '104958'
+      - '2246'
+      - '4446'
+      - '8718'
       X-Ratelimit-Reset:
-      - '1574357760'
-      - '1574358660'
-      - '1574360460'
-      - '1574443200'
+      - '1574420100'
+      - '1574421000'
+      - '1574422800'
+      - '1574505540'
       Cf-Cache-Status:
       - DYNAMIC
       Expect-Ct:
@@ -188,23 +188,23 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 5394572e8daaee6d-CDG
+      - 539a48ac5c70b7c3-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Description":"Wallet de: user_c965ba317862aa0b0913@capsens.eu","Owners":["71652869"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71652870","Tag":null,"CreationDate":1574356892}'
+      string: '{"Description":"Wallet de: user_8b0da4734781cbaa3a53@capsens.eu","Owners":["71670470"],"Balance":{"Currency":"EUR","Amount":0},"Currency":"EUR","FundsType":"DEFAULT","Id":"71670471","Tag":null,"CreationDate":1574419212}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:32 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:12 GMT
 - request:
     method: post
     uri: https://api.sandbox.mangopay.com/v2.01/merwanehamadi/payins/card/web
     body:
       encoding: UTF-8
-      string: '{"AuthorId":"71652869","CreditedUserId":"71652869","CreditedWalletId":"71652870","DebitedFunds":{"Currency":"EUR","Amount":6362},"Fees":{"Currency":"EUR","Amount":0},"CardType":"CB_VISA_MASTERCARD","ReturnURL":"http://localhost:3000/payment","Culture":"FR","Tag":"PayIn/Card/Web","SecureMode":"DEFAULT","TemplateURL":"http://www.a-url.com/3DS-redirect"}'
+      string: '{"AuthorId":"71670470","CreditedUserId":"71670470","CreditedWalletId":"71670471","DebitedFunds":{"Currency":"EUR","Amount":7761},"Fees":{"Currency":"EUR","Amount":0},"CardType":"CB_VISA_MASTERCARD","ReturnURL":"http://localhost:3000/payment","Culture":"FR","Tag":"PayIn/Card/Web","SecureMode":"DEFAULT","TemplateURL":"http://www.a-url.com/3DS-redirect"}'
     headers:
       User-Agent:
       - MANGOPAY V2 RubyBindings/3.0.33
       Authorization:
-      - bearer 06d09e4f4b0c460189daa14e71bc37a9
+      - bearer 3f74f26a6fd345b0821a294511e64088
       Content-Type:
       - application/json
       X-Mangopay-Client-User-Agent:
@@ -221,7 +221,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2019 17:21:32 GMT
+      - Fri, 22 Nov 2019 10:40:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -229,8 +229,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d525689745b1005a3a1e797287002fd771574356892; expires=Sat, 21-Dec-19
-        17:21:32 GMT; path=/; domain=.mangopay.com; HttpOnly
+      - __cfduid=d8f2c991bead8e14cbd71b02a1b63583b1574419212; expires=Sun, 22-Dec-19
+        10:40:12 GMT; path=/; domain=.mangopay.com; HttpOnly
       Cache-Control:
       - no-cache
       Pragma:
@@ -238,20 +238,20 @@ http_interactions:
       Expires:
       - "-1"
       X-Ratelimit:
-      - '11'
-      - '11'
-      - '5'
-      - '588'
+      - '55'
+      - '55'
+      - '643'
+      - '83'
       X-Ratelimit-Remaining:
-      - '105012'
-      - '2295'
-      - '4489'
-      - '8789'
+      - '104957'
+      - '2245'
+      - '4445'
+      - '8717'
       X-Ratelimit-Reset:
-      - '1574357760'
-      - '1574358660'
-      - '1574360460'
-      - '1574443200'
+      - '1574420100'
+      - '1574421000'
+      - '1574422800'
+      - '1574505540'
       Cf-Cache-Status:
       - DYNAMIC
       Expect-Ct:
@@ -259,10 +259,10 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 5394572fdf7eede3-CDG
+      - 539a48ad5c05edfb-CDG
     body:
       encoding: ASCII-8BIT
-      string: '{"Id":"71652871","Tag":"PayIn/Card/Web","CreationDate":1574356892,"AuthorId":"71652869","CreditedUserId":"71652869","DebitedFunds":{"Currency":"EUR","Amount":6362},"CreditedFunds":{"Currency":"EUR","Amount":6362},"Fees":{"Currency":"EUR","Amount":0},"Status":"CREATED","ResultCode":null,"ResultMessage":null,"ExecutionDate":null,"Type":"PAYIN","Nature":"REGULAR","CreditedWalletId":"71652870","DebitedWalletId":null,"PaymentType":"CARD","ExecutionType":"WEB","RedirectURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1m8zAvckWF2zZXHRe4041574356892389","ReturnURL":"http://localhost:3000/payment?transactionId=71652871","TemplateURL":"https://api.sandbox.mangopay.com/Content/PaylineTemplate?rp=c6d3373cda1b47c3b4851dc8dd91327c&transactionId=71652871","CardType":"CB_VISA_MASTERCARD","Culture":"FR","SecureMode":"DEFAULT","StatementDescriptor":null}'
+      string: '{"Id":"71670472","Tag":"PayIn/Card/Web","CreationDate":1574419212,"AuthorId":"71670470","CreditedUserId":"71670470","DebitedFunds":{"Currency":"EUR","Amount":7761},"CreditedFunds":{"Currency":"EUR","Amount":7761},"Fees":{"Currency":"EUR","Amount":0},"Status":"CREATED","ResultCode":null,"ResultMessage":null,"ExecutionDate":null,"Type":"PAYIN","Nature":"REGULAR","CreditedWalletId":"71670471","DebitedWalletId":null,"PaymentType":"CARD","ExecutionType":"WEB","RedirectURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=13JzDlLMJyNBYeTQN3671574419212513","ReturnURL":"http://localhost:3000/payment?transactionId=71670472","TemplateURL":"https://api.sandbox.mangopay.com/Content/PaylineTemplate?rp=3034a097058b4a5ca2293417f5c57305&transactionId=71670472","CardType":"CB_VISA_MASTERCARD","Culture":"FR","SecureMode":"DEFAULT","StatementDescriptor":null}'
     http_version: 
-  recorded_at: Thu, 21 Nov 2019 17:21:32 GMT
+  recorded_at: Fri, 22 Nov 2019 10:40:12 GMT
 recorded_with: VCR 5.0.0

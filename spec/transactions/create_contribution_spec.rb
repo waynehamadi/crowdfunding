@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe CreateContribution, type: :transaction do
   subject { CreateContribution.new.call(contribution: contribution) }
-  context 'when contribution is valid', cassette: :valid_contribution do
+  context 'when contribution is valid', cassette: :mangoPay_payin_card_ok do
     let(:contribution) { FactoryBot.create(:contribution) }
 
     it 'returns success' do
@@ -24,7 +24,7 @@ RSpec.describe CreateContribution, type: :transaction do
     end
   end
 
-  context 'when contribution amount is 0', cassette: :invalid_contribution do
+  context 'when contribution amount is 0', cassette: :mangoPay_payin_card_failed do
     let(:contribution) { FactoryBot.create(:contribution, amount_in_cents: 0) }
     it 'returns failure' do
       expect(subject).to be_failure

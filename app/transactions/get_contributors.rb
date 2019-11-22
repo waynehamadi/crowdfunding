@@ -26,6 +26,6 @@ class GetContributors
         csv << [user.first_name, user.last_name, user.created_at, user.email, user.birthday, user.country_of_residence, user.nationality]
       end
     end
-    Success(input.merge(filepath: @file.path))
+    Success(input.merge(file_path: @file.path))
   end
 end
