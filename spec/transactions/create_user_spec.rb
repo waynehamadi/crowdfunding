@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe CreateUser, type: :transactions do
   subject { CreateUser.new.call(user: user) }
   let(:user) { User.create!(first_name:"first_name", last_name:"last_name", birthday:"1999-03-04", email:"user_457@capsens.eu", password:"password", country_of_residence: "FR", nationality: "FR") }
