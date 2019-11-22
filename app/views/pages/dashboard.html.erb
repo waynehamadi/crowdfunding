@@ -1,5 +1,5 @@
 <%= link_to "Edit your profile", edit_user_registration_path %>
-<p>Total contributed : <%= current_user.contributions.sum(:amount_in_cents).fdiv(100).to_s %> </p>
+<p>Total contributed : <%= current_user.contributions.sum(:amount_in_cents).fdiv(100) %> </p>
  <p>Investi dans <%= current_user.projects.count %> projets et <%= current_user.counterparts.count %> contreparties</p>
 <p>My projects :</p>
 
@@ -11,7 +11,7 @@
   <% current_user.projects.each do |project| %>
     <tr>
       <td><%= link_to project.name, project_path(project) %></td>
-      <td><%= project.contributions.where(project_id: project.id).sum(:amount_in_cents).fdiv(100).to_s  %></td>
+      <td><%= project.contributions.where(project_id: project.id).sum(:amount_in_cents).fdiv(100)  %></td>
     </tr>
   <% end %>
 </table>
@@ -25,7 +25,7 @@
   </tr>
   <% current_user.contributions.each do |contribution| %>
     <tr>
-      <td><%= contribution.amount_in_cents.fdiv(100).to_s%> €</td>
+      <td><%= contribution.amount_in_cents.fdiv(100)%> €</td>
       <td><%= contribution.project.name %></td>
     </tr>
   <% end %>
@@ -43,7 +43,7 @@
     <tr>
       <td><%= counterpart.name%></td>
       <td><%= counterpart.project.name %></td>
-      <td><%= counterpart.contributions.where(project_id: counterpart.project.id).sum(:amount_in_cents).fdiv(100).to_s%> €</td>
+      <td><%= counterpart.contributions.where(project_id: counterpart.project.id).sum(:amount_in_cents).fdiv(100)%> €</td>
     </tr>
   <% end %>
 </table>

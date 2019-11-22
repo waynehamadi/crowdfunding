@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   include AASM
   has_many :counterparts, dependent: :destroy
   has_many :contributions, dependent: :destroy
+  has_many :contributors, through: :contributions, source: :user
   belongs_to :category
   validates :name, :goal_amount, presence: true
   validates :goal_amount, numericality: { greater_than: 0 }
