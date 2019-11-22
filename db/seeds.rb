@@ -1,8 +1,8 @@
 if Rails.env.development?
   # Destroy All
-  create(:admin_user) unless AdminUser.any?
+  FactoryBot.create(:admin_user) unless AdminUser.any?
   p 'Admins created (or already existing)'
-  create_list(:contribution, 20) unless Contribution.any?
+  FactoryBot.create_list(:contribution, 20) unless Contribution.any?
   p 'Contributions created (or already existing)'
   Project.all.each do |project|
     CheckProject.new.call(project: project)

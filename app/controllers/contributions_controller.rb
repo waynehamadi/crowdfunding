@@ -21,7 +21,7 @@ class ContributionsController < ApplicationController
   end
 
   def contribution_params
-    params.require(:contribution).permit(:amount_in_cents, :counterpart)
+    params.require(:contribution).permit(:amount_in_cents, :counterpart_id)
   end
 end
 #
