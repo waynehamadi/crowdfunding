@@ -35,6 +35,8 @@ class CreateUser
     else
       Failure({ resource: @user }.merge(error('create_account_error')))
     end
+    rescue MangoPay::ResponseError => e
+      Failure(input.merge(error: 'mango_pay_error_user'))
   end
 
   def create_user_wallet(input)
@@ -49,10 +51,10 @@ class CreateUser
     else
       Failure(error('create_account_error'))
     end
+    rescue MangoPay::ResponseError => e
+      Failure(input.merge(error: 'mango_pay_error_wallet'))
   end
   def send_welcome_email(input)
     mailer = UserMailer.with(user: @user).welcome_email.deliver_now
   end
 end
-
-
