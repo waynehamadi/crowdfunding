@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   end
   get 'payment', to: 'payments#payment'
   match 'csvs/:id/download' => 'csv#download', as: 'csv_download', via: [:get]
-
+  resources :contributions, only: %i[show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
-
-
-

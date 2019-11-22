@@ -24,6 +24,8 @@ gem 'sidekiq'
 gem 'vcr'
 gem 'webmock'
 gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 
 # Use Redis adapter to run Action Cable in production

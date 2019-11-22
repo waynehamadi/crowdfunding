@@ -22,11 +22,13 @@
   <tr>
     <th>Contribution amount</th>
     <th>Project</th>
+    <th>Download</th>
   </tr>
   <% current_user.contributions.each do |contribution| %>
     <tr>
       <td><%= contribution.amount_in_cents.fdiv(100)%> €</td>
       <td><%= contribution.project.name %></td>
+      <td><%= link_to 'Download contributors', contribution_path(contribution, format: :pdf) %></td>
     </tr>
   <% end %>
 </table>

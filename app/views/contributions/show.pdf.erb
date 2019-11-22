@@ -1,0 +1,8 @@
+<meta charset='utf-8' />
+<p>Contribution id: <%= @contribution.id %> </p>
+<ul>
+  <li>Project: <%= @contribution.project.name %></li>
+  <li>Amount: <%= @contribution.amount_in_cents.fdiv(100).round %>€</li>
+  <li>Counterpart: <%= @contribution.counterpart.name %></li>
+  <li>Created <%= @contribution.created_at.strftime("%A, %-d %B %y:%d") %></li>
+</ul>
