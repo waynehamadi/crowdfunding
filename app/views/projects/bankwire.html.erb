@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="bankwire-board">
+    <div class="" style="margin-top: 100px;">
+      <%= form_for [@project, @contribution] do |f| %>
+        <div class="" style=" margin:10px; border: 2px solid grey; padding: 15px;">
+          <div class="">
+            <%= f.label 'Choose your amount' %>
+            <%=  f.text_field :amount_in_cents, placeholder: 'ex: 1000'  %> €
+          </div>
+          <div class="d-none">
+             <%= f.check_box :bankwire, { checked: true} %>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center" style="margin:30px;">
+          <%= f.submit 'Pay by bankwire', class: "btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

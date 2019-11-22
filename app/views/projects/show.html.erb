@@ -21,3 +21,12 @@
     <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|counterpart| [counterpart.name, counterpart.id]})  %>
     <%= f.submit 'Contribute'%>
   <% end %>
+<%= link_to 'pay with bankwire', bankwire_path(id: @project.id)%>
+<%= form_for [@project, @contribution] do |f| %>
+  <%= f.label 'Amount' %>
+  <%=  f.text_field :amount_in_cents, placeholder: '250'  %> €
+  <%= f.label 'Counterpart' %>
+  <%= f.select :counterpart_id, options_for_select(@project.counterparts.collect{|counterpart| [counterpart.name, counterpart.id]})  %>
+  <%= f.check_box :bankwire, { checked: true} %>
+  <%= f.submit 'Contribute'%>
+<% end %>

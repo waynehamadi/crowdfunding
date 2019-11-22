@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset='utf-8' />
+  <h1 style="margin-top: 100px">MANGOPAY</h1>
+  <span><%= @date %></span>
+  <div class="">
+    <div class="" style="margin-bottom: 20px;">
+      <hr>
+      <span>Amount: <%= @amount %> <%= @currency %></span>
+      <span>Fees: <%= @fees %> <%= @currency %></span>
+    </div>
+    <div class="" style="border:1px solid black; padding: 20px;">
+      <div class=""><span>Reference: <%= @ref %></span></div>
+      <div class=""><span>IBAN: <%= @iban %></span></div>
+      <div class=""><span>BIC: <%= @bic %></span></div>
+    </div>
+  </div>
+  <h5>TOTAL: <%= @amount + @fees %> <%= @currency %></h5>
+</div>
+</div>

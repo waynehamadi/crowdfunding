@@ -1,4 +1,4 @@
-class CreateContribution
+class CreateCardContribution
   include Dry::Transaction
   tee :new_contribution
   step :validate
