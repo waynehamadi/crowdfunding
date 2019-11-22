@@ -22,8 +22,8 @@ RSpec.describe CreateUser, type: :transactions do
     end
 
     it 'callsMangoPay::Wallet' do
-        expect(MangoPay::Wallet).to receive(:create).and_call_original
-        subject
+      expect(MangoPay::Wallet).to receive(:create).and_call_original
+      subject
     end
   end
 

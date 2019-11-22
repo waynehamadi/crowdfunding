@@ -9,7 +9,7 @@ RSpec.describe GetContributors, type: :transactions do
       expect(subject).to be_failure
     end
   end
-  context 'When the project has 3 contributors' do
+  context 'When the project has 3 contributors', cassette: :valid_user do
     before(:each) do
       FactoryBot.create_list(:contribution, 3, project: project)
     end
