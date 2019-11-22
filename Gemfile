@@ -23,6 +23,8 @@ gem 'omniauth-facebook'
 gem 'sidekiq'
 gem 'vcr'
 gem 'webmock'
+gem 'wicked_pdf'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

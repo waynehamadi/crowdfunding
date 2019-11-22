@@ -11,7 +11,7 @@ RSpec.describe GetContributors, type: :transactions do
   end
   context 'When the project has 3 contributors', cassette: :contribution_ok do
     before(:each) do
-      FactoryBot.create_list(:contribution, 3, project: project)
+      create_list(:contribution, 3, project: project)
     end
 
     it 'the transaction succeeds' do
