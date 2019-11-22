@@ -25,3 +25,10 @@ class CreateBill
             ))
   end
 end
+      t.integer :amount
+      t.integer :fees
+      t.string :bic
+      t.string :iban
+      t.string :ref
+      t.date :date
+      t.string :currency

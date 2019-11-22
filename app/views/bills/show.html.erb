@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="infos">
+    <div class="" style="border:1px solid;margin-top: 100px;padding: 30px">
+      <h1>MANGOPAY</h1>
+      <span><%= @bill.date %></span>
+      <div class="d-flex justify-content-between">
+        <div class="">
+          <span>Amount: <%= @bill.amount %> <%= @currency %></span>
+          <span>Fees: <%= @bill.fees %> <%= @currency %></span>
+        </div>
+        <div class="" style="border:1px solid black; padding: 20px;">
+          <div class=""><span>Reference: <%= @bill.ref %></span></div>
+          <div class=""><span>IBAN: <%= @bill.iban %></span></div>
+          <div class=""><span>BIC: <%= @bill.bic %></span></div>
+        </div>
+      </div>
+      <h5>TOTAL: <%= @bill.amount + @bill.fees %> <%= @bill.currency %></h5>
+      <%= link_to 'Download', bill_path( @bill, format: :pdf
+      ) %>
+    </div>
+  </div>
+</div>
