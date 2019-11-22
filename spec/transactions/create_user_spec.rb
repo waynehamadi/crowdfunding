@@ -14,7 +14,7 @@ RSpec.describe CreateUser, type: :transactions do
     end
   end
 
-  context 'when user is valid', cassette: :valid_user do
+  context 'when user is valid', cassette: :mangopay_natural_user_ok do
 
     it 'calls MangoPay::NaturalUser' do
       expect(MangoPay::NaturalUser).to receive(:create).and_call_original
@@ -27,7 +27,7 @@ RSpec.describe CreateUser, type: :transactions do
     end
   end
 
-  context 'when nationality is not specified', cassette: :invalid_user do
+  context 'when nationality is not specified', cassette: :mangopay_natural_user_failed do
     let(:user) { User.create!(first_name:"first_name", last_name:"last_name", birthday:"1999-03-04", email:"user_457@capsens.eu", password:"password", country_of_residence: "FR", nationality: "") }
     it 'returns failure' do
       expect(subject).to be_failure

@@ -21,7 +21,6 @@ class CreateUser
     @user.save
   end
   def create_mango_pay_user(input)
-
     mango_pay_user = MangoPay::NaturalUser.create(
       'FirstName': @user.first_name,
       'LastName': @user.last_name,
@@ -36,7 +35,6 @@ class CreateUser
     else
       Failure({ resource: @user }.merge(error('create_account_error')))
     end
-
     rescue MangoPay::ResponseError => e
       Failure(input.merge(error: 'mango_pay_error_user'))
   end
